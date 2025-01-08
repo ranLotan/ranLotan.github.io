@@ -228,6 +228,30 @@
     </script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
+        // Create a MutationObserver to monitor changes in the DOM
+        const observer = new MutationObserver((mutations) => {
+          mutations.forEach(() => {
+            // Check for the element with id="createAccount"
+            const createAccountLink = document.getElementById('createAccount');
+            
+            if (createAccountLink) {
+              // Get the parent element with class="create"
+              const parentElement = createAccountLink.closest('.create');
+              
+              if (parentElement) {
+                parentElement.remove(); // Remove the parent element
+                observer.disconnect(); // Stop observing once the element is removed
+              }
+            }
+          });
+        });
+    
+        // Start observing the body for changes
+        observer.observe(document.body, { childList: true, subtree: true });
+      });
+    </script>
+    <!-- <script>
+      document.addEventListener("DOMContentLoaded", function () {
         // Find all elements with the class 'create'
         const createAccountLink = document.getElementById('createAccount');
         
@@ -239,5 +263,5 @@
           }
         }
       });
-    </script>
+    </script> -->
 </body></html>
