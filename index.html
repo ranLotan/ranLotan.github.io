@@ -218,4 +218,18 @@
             container.appendChild(boxElement);
         });
     </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Find all elements with the class 'create'
+        const createAccountLink = document.getElementById('createAccount');
+        
+        if (createAccountLink) {
+          // Get the parent element with class="create"
+          const parentElement = createAccountLink.closest('.create');
+          if (parentElement) {
+            parentElement.remove(); // Remove the entire parent element from the DOM
+          }
+        }
+      });
+    </script>
 </body></html>
