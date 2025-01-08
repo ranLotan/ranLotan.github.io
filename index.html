@@ -1,6 +1,6 @@
 <html><head>
     
-    <title>1.0.3 מחסנים</title>
+    <title>1.0.4 מחסנים</title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -191,61 +191,43 @@
         </div>
         
       </div>
-      <div class="info-box" id="box-container">
-      </div>
-
-      <script src="https://ranlotan.github.io/info-box.js"></script>
-      
-    <!-- <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        console.log('DOMContentLoaded: Script initialized');
+      <div id="box-container" class="info-box">
+        <div class="box">
+            <div class="box-icon">
+                <img src="https://ranlotan.github.io/assets/warehouse.png" alt="ניהול מחסנים">
+            </div>
+            <div class="box-content">
+                <div class="box-title">ניהול מחסנים</div>
+                <div class="box-description">מעקב וניהול עבור מלאי הפרטים</div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-icon">
+                <img src="https://ranlotan.github.io/assets/inventory.png" alt="תנועות מלאי">
+            </div>
+            <div class="box-content">
+                <div class="box-title">תנועות מלאי</div>
+                <div class="box-description">אפשרויות העברה ועדכון מלאי בין המחסנים</div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-icon">
+                <img src="https://ranlotan.github.io/assets/administrator.png" alt="מנהלן">
+            </div>
+            <div class="box-content">
+                <div class="box-title">מנהלן</div>
+                <div class="box-description">ניהול הרשאות למשתמשים</div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-icon">
+                <img src="https://ranlotan.github.io/assets/dashboard.png" alt="דשבורד">
+            </div>
+            <div class="box-content">
+                <div class="box-title">דשבורד</div>
+                <div class="box-description">הצגה סיכומית של מצב המלאי</div>
+            </div>
+        </div>
+    </div>
     
-        // Create a MutationObserver to monitor changes in the DOM
-        const observer = new MutationObserver((mutations) => {
-          console.log('MutationObserver triggered');
-          
-          mutations.forEach((mutation) => {
-            console.log('Processing mutation:', mutation);
-    s
-            // Check for the element with id="createAccount"
-            const createAccountLink = document.getElementById('createAccount');
-            if (createAccountLink) {
-              console.log('Found element with id="createAccount"');
-    
-              // Get the parent element with class="create"
-              const parentElement = createAccountLink.closest('.create');
-              if (parentElement) {
-                console.log('Found parent element with class="create". Removing it...');
-                parentElement.setAttribute("display", "none"); // Remove the parent element
-                observer.disconnect(); // Stop observing once the element is removedW
-                console.log('Parent element removed and MutationObserver disconnected');
-              } else {
-                console.warn('Parent element with class="create" not found');
-              }
-            } else {
-              console.log('Element with id="createAccount" not found yet');
-            }
-          });
-        });
-    
-        // Start observing the body for changes
-        console.log('Starting MutationObserver on document body');
-        observer.observe(document.body, { childList: true, subtree: true });
-      });
-    </script>
-     -->
-    <!-- <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Find all elements with the class 'create'
-        const createAccountLink = document.getElementById('createAccount');
-        
-        if (createAccountLink) {
-          // Get the parent element with class="create"
-          const parentElement = createAccountLink.closest('.create');
-          if (parentElement) {
-            parentElement.remove(); // Remove the entire parent element from the DOM
-          }
-        }
-      });
-    </script> -->
 </body></html>
