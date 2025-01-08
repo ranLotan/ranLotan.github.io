@@ -172,7 +172,7 @@
     <div id="background_branding_container" data-tenant-branding-background-color="true">
       <img data-tenant-branding-background="true" style="height: 45%;" src="https://ranlotan.github.io/assets/warehouses_.png" alt="Background Image">
     </div>
-    <div class="container  unified_container " role="presentation" style="direction: rtl;">
+    <div class="container  unified_container" role="presentation" style="direction: rtl;">
         <div class="row">
             <div class="col-lg-6">
                 <div class="panel panel-default">
@@ -201,7 +201,13 @@
 
         const container = document.getElementById('box-container');
 
+        const boxContanier = document.createElement('div');
+        boxContanier.setAttribute("class", 'info-box');
+        boxContanier.setAttribute("id", 'box-contanier');
+        
         boxData.forEach(box => {
+
+
             const boxElement = document.createElement('div');
             boxElement.className = 'box';
 
@@ -215,8 +221,10 @@
                 </div>
             `;
 
-            container.appendChild(boxElement);
+            boxContanier.appendChild(boxElement);
         });
+        document.body.appendChild(boxContanier);
+
     </script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
