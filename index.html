@@ -1,6 +1,6 @@
 <html><head>
     
-    <title>1.1 מחסנים</title>
+    <title>1.2 מחסנים</title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -119,6 +119,9 @@
         /* endinject */
     </style>
     <style>
+      .create{
+        display: none;
+      }
         .info-box{
             direction: rtl;
             text-align: right;
@@ -226,7 +229,7 @@
         document.body.appendChild(boxContanier);
 
     </script>
-    <script>
+    <!-- <script>
       document.addEventListener("DOMContentLoaded", function () {
         console.log('DOMContentLoaded: Script initialized');
     
@@ -236,7 +239,7 @@
           
           mutations.forEach((mutation) => {
             console.log('Processing mutation:', mutation);
-    
+    s
             // Check for the element with id="createAccount"
             const createAccountLink = document.getElementById('createAccount');
             if (createAccountLink) {
@@ -246,8 +249,8 @@
               const parentElement = createAccountLink.closest('.create');
               if (parentElement) {
                 console.log('Found parent element with class="create". Removing it...');
-                parentElement.remove(); // Remove the parent element
-                observer.disconnect(); // Stop observing once the element is removed
+                parentElement.setAttribute("display", "none"); // Remove the parent element
+                observer.disconnect(); // Stop observing once the element is removedW
                 console.log('Parent element removed and MutationObserver disconnected');
               } else {
                 console.warn('Parent element with class="create" not found');
@@ -263,7 +266,7 @@
         observer.observe(document.body, { childList: true, subtree: true });
       });
     </script>
-    
+     -->
     <!-- <script>
       document.addEventListener("DOMContentLoaded", function () {
         // Find all elements with the class 'create'
