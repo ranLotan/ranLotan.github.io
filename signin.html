@@ -1,6 +1,6 @@
 <html><head>
     
-    <title>1.0.8.4 מחסנים</title>
+    <title>1.0.8.5 מחסנים</title>
   
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,7 +34,7 @@
         // Select the target element with id="api"
         const targetNode = document.querySelector("#api");
 
-        if (targetNode) {
+        // if (targetNode) {
             // Create a MutationObserver to monitor the target element
             const observer = new MutationObserver((mutations) => {
                 console.log("🔄 DOM Mutation detected in #api...");
@@ -47,15 +47,15 @@
             });
 
             // Observe changes inside #api
-            console.log("👀 Starting MutationObserver on #api...");
-            observer.observe(targetNode, { childList: true, subtree: true });
+            console.log("👀 Starting MutationObserver on body...");
+            observer.observe(document.body, { childList: true, subtree: true });
 
             // Run initially in case the element is already there
             console.log("🚀 Initial check for the injected element...");
             updateTabIndex();
-        } else {
-            console.log("❌ #api element not found in the DOM. Observer not started.");
-        }
+        // } else {
+            // console.log("❌ #api element not found in the DOM. Observer not started.");
+        // }
 
     </script>
     <style id="common">
