@@ -1,11 +1,54 @@
 <html><head>
     
-    <title>1.0.8 מחסנים</title>
+    <title>1.0.8.1 מחסנים</title>
   
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <script>
+        console.log("test script started");
+    </script>
+    <script>
+        // Function to update tabindex once the element is added
+        console.log("tab index script started");
+        function updateTabIndex() {
+            const element = document.querySelector("#forgotPassword"); // Change this to the actual selector
+            if (element) {
+                element.setAttribute("tabindex", "1"); // Or any desired value
+                console.log("✅ Tabindex updated for:", element);
+            } else {
+                console.log("⚠️ Element not found yet, waiting...");
+            }
+        }
+
+        // Select the target element with id="api"
+        const targetNode = document.querySelector("#api");
+
+        if (targetNode) {
+            // Create a MutationObserver to monitor the target element
+            const observer = new MutationObserver((mutations) => {
+                console.log("🔄 DOM Mutation detected in #api...");
+                for (let mutation of mutations) {
+                    if (mutation.type === "childList") {
+                        console.log("📌 Child list changed in #api, checking for injected element...");
+                        updateTabIndex(); // Call function when child nodes change
+                    }
+                }
+            });
+
+            // Observe changes inside #api
+            console.log("👀 Starting MutationObserver on #api...");
+            observer.observe(targetNode, { childList: true, subtree: true });
+
+            // Run initially in case the element is already there
+            console.log("🚀 Initial check for the injected element...");
+            updateTabIndex();
+        } else {
+            console.log("❌ #api element not found in the DOM. Observer not started.");
+        }
+
+    </script>
     <style id="common">
         @font-face {
             font-family: 'SegoeUI';
@@ -174,45 +217,6 @@
             color: #555;
         }
     </style>
-    <script>
-        // Function to update tabindex once the element is added
-        function updateTabIndex() {
-            const element = document.querySelector("#forgotPassword"); // Change this to the actual selector
-            if (element) {
-                element.setAttribute("tabindex", "1"); // Or any desired value
-                console.log("✅ Tabindex updated for:", element);
-            } else {
-                console.log("⚠️ Element not found yet, waiting...");
-            }
-        }
-
-        // Select the target element with id="api"
-        const targetNode = document.querySelector("#api");
-
-        if (targetNode) {
-            // Create a MutationObserver to monitor the target element
-            const observer = new MutationObserver((mutations) => {
-                console.log("🔄 DOM Mutation detected in #api...");
-                for (let mutation of mutations) {
-                    if (mutation.type === "childList") {
-                        console.log("📌 Child list changed in #api, checking for injected element...");
-                        updateTabIndex(); // Call function when child nodes change
-                    }
-                }
-            });
-
-            // Observe changes inside #api
-            console.log("👀 Starting MutationObserver on #api...");
-            observer.observe(targetNode, { childList: true, subtree: true });
-
-            // Run initially in case the element is already there
-            console.log("🚀 Initial check for the injected element...");
-            updateTabIndex();
-        } else {
-            console.log("❌ #api element not found in the DOM. Observer not started.");
-        }
-
-    </script>
   </head>
   <body>
     <div id="background_branding_container" data-tenant-branding-background-color="true">
